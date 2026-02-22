@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Language Translator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #ffffff;
+        padding: 35px;
+        width: 520px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 130px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 2px solid #667eea;
+        font-size: 14px;
+        resize: none;
+        outline: none;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 2px solid #764ba2;
+        font-size: 14px;
+    }
+
+    button {
+        margin-top: 18px;
+        padding: 12px 25px;
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .result-box {
+        margin-top: 25px;
+        padding: 18px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #43cea2, #185a9d);
+        color: white;
+        min-height: 60px;
+        text-align: left;
+        font-size: 15px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🌍 AI Language Translator</h2>
+
+<form method="POST">
+
+
+<!-- INPUT TEXT -->
+<textarea name="data" placeholder="Enter text..." required></textarea>
+
+<br><br>
+
+<!-- AUTO DETECT OPTION -->
+<label>
+    <input type="checkbox" name="auto_detect" value="yes" checked>
+    Auto Detect Language
+</label>
+
+<br><br>
+
+<!-- SOURCE LANGUAGE -->
+<label>Select Source Language:</label>
+<select name="source_lang">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+    <option value="de">German</option>
+</select>
+
+<br><br>
+
+<!-- TARGET LANGUAGE -->
+<label>Select Target Language:</label>
+<select name="target_lang" required>
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+    <option value="de">German</option>
+</select>
+
+<br><br>
+
+<button type="submit">Translate</button>
+
+
+</form>
+
+
+<div class="result-box">
+    <b>Result:</b><br>
+    {{ translated_text }}
+</div>
+
+
+</div>
+
+</body>
+</html>
